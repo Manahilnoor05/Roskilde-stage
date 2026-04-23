@@ -4865,6 +4865,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5004,6 +5005,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MouseLook
   mouseSensitivity: 300
   playerBody: {fileID: 1557145035}
+  allowLook: 1
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6a59e89239f4f11a25e77706e33c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisualEffectsController
+  intoxicationSystem: {fileID: 1557145037}
+  volume: {fileID: 832575518}
 --- !u!1 &332520011
 GameObject:
   m_ObjectHideFlags: 0
@@ -21652,6 +21668,8 @@ GameObject:
   - component: {fileID: 1557145030}
   - component: {fileID: 1557145029}
   - component: {fileID: 1557145028}
+  - component: {fileID: 1557145037}
+  - component: {fileID: 1557145036}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -21821,6 +21839,51 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557145036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557145027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc13420f323f3442e815306af6ff83b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerEffects
+  intoxicationSystem: {fileID: 1557145037}
+  playerMovement: {fileID: 1557145030}
+  cameraTransform: {fileID: 330585546}
+  normalSpeed: 5
+  alcoholSpeed: 1.4
+  drugSpeed: 3
+  alcoholShakeAmount: 0.18
+  alcoholShakeSpeed: 10
+  drugShakeAmount: 0.25
+  drugShakeSpeed: 18
+  alcoholTiltAmount: 12
+  alcoholTiltSpeed: 1.5
+  drugTiltAmount: 20
+  drugTiltSpeed: 5
+  alcoholYawDrift: 8
+  drugYawDrift: 18
+--- !u!114 &1557145037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557145027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c1fd8c23a8d43c0b1158b559e28eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IntoxicationSystem
+  intensity: 0
+  currentEffect: 0
+  alcoholAmount: 0.35
+  drugAmount: 0.5
+  soberRate: 0.05
 --- !u!1 &1578973562
 GameObject:
   m_ObjectHideFlags: 0
